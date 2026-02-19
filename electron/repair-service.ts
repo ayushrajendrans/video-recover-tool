@@ -6,12 +6,15 @@ const isDev = process.env.NODE_ENV === 'development';
 
 // Path to untrunc binary
 const getUntruncPath = () => {
-    const basePath = isDev
-        ? path.join(process.cwd(), 'resources')
-        : process.resourcesPath;
+    const isDev = process.env.NODE_ENV === 'development'
+    const basePath = isDev ? path.join(process.cwd(), 'resources') : process.resourcesPath
 
-    return path.join(basePath, 'untrunc.exe');
-};
+    // Check platform: 'win32' is Windows, 'darwin' is Mac
+    const isWindows = process.platform === 'win32'
+    const binaryName = isWindows ? 'untrunc.exe' : 'untrunc'
+
+    return path.join(basePath, binaryName)
+}
 
 export const repairVideo = (
     referencePath: string,
