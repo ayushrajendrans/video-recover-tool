@@ -1,0 +1,116 @@
+.container {
+    width: 100%;
+    min-height: 180px;
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: var(--glass-bg);
+    backdrop-filter: var(--blur-glass);
+    overflow: hidden;
+}
+
+.container:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(1.02);
+}
+
+.dragOver {
+    border-color: var(--color-primary);
+    background-color: rgba(139, 92, 246, 0.1);
+    border-style: solid;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+.hasFile {
+    border-style: solid;
+    border-color: var(--color-secondary);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.02) 100%);
+}
+
+.error {
+    border-color: var(--color-status-error);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.input {
+    display: none;
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.container:hover .icon {
+    transform: translateY(-5px);
+    color: var(--color-primary);
+}
+
+.label {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-display);
+    margin: 0;
+}
+
+.subLabel {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.fileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.fileName {
+    font-weight: 700;
+    color: var(--color-secondary);
+    word-break: break-all;
+    font-family: var(--font-family-display);
+}
+
+.fileSize {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.container:hover .glow {
+    opacity: 1;
+}

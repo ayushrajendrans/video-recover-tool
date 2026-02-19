@@ -1,0 +1,106 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family-display);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    border: 1px solid transparent;
+    gap: 0.6rem;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+.button:active:not(:disabled) {
+    transform: scale(0.96);
+}
+
+/* Variants */
+.primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 8px 16px -4px rgba(139, 92, 246, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.primary:hover:not(:disabled) {
+    box-shadow: 0 12px 24px -6px rgba(139, 92, 246, 0.6);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.secondary {
+    background: var(--glass-bg-vibrant);
+    color: var(--color-text-primary);
+    border: var(--glass-border);
+    backdrop-filter: var(--blur-glass);
+    box-shadow: var(--glass-shadow);
+}
+
+.secondary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+}
+
+.ghost:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+}
+
+.danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-status-error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.danger:hover:not(:disabled) {
+    background: var(--color-status-error);
+    color: white;
+}
+
+/* Sizes */
+.sm {
+    padding: 0.4rem 1rem;
+    font-size: var(--font-size-xs);
+}
+
+.md {
+    padding: 0.6rem 1.4rem;
+    font-size: var(--font-size-sm);
+}
+
+.lg {
+    padding: 0.8rem 2rem;
+    font-size: var(--font-size-base);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

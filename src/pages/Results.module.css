@@ -1,0 +1,98 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.successIconWrapper {
+    width: 80px;
+    height: 80px;
+    background: var(--color-status-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    animation: pulse-glow 2s infinite;
+}
+
+.title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--font-family-display);
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.previewCard {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    background: var(--glass-bg-vibrant);
+    border-radius: var(--radius-xl);
+    border: var(--glass-border-bright);
+    backdrop-filter: var(--blur-glass-heavy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-premium);
+}
+
+.previewPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-muted);
+}
+
+.previewIcon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.filePath {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--font-size-xs);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    max-width: 80%;
+    word-break: break-all;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.actionButton {
+    min-width: 200px;
+}
