@@ -16,6 +16,7 @@ let win: BrowserWindow | null
 
 function createWindow() {
   win = new BrowserWindow({
+    title: 'Pro Video Repair',
     width: 1100,
     height: 750,
     webPreferences: {
