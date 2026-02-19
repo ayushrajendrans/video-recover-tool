@@ -19,11 +19,19 @@ function createWindow() {
     title: 'Pro Video Repair',
     width: 1100,
     height: 750,
+    show: false,
+    autoHideMenuBar: true, // Hide menu bar by default
     webPreferences: {
       preload: path.join(__dirname, '../preload/preload.cjs'),
       nodeIntegration: false,
       contextIsolation: true,
     },
+  })
+
+  win.setMenu(null); // Completely remove the system menu
+
+  win.once('ready-to-show', () => {
+    win?.show()
   })
 
   win.webContents.on('did-finish-load', () => {
