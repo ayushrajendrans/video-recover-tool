@@ -10,7 +10,19 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className={styles.container}>
             <header className={styles.header}>
                 <div className={styles.logo}>
-                    <span className={styles.logoIcon}>📹</span>
+                    <svg
+                        className={styles.logoIcon}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <path d="M23 7l-7 5 7 5V7z" />
+                        <rect x="1" y="5" width="15" height="14" rx="3" ry="3" />
+                        <circle cx="8.5" cy="12" r="2.5" />
+                    </svg>
                     <span className={styles.logoText}>Pro Video Repair</span>
                 </div>
             </header>

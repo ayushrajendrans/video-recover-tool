@@ -38,9 +38,10 @@
 }
 
 .logoIcon {
-    font-size: 1.75rem;
-    -webkit-text-fill-color: initial;
-    filter: drop-shadow(0 0 8px var(--color-primary-glow));
+    width: 28px;
+    height: 28px;
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
 }
 
 
