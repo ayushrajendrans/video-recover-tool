@@ -2,7 +2,6 @@ import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
-const isDev = process.env.NODE_ENV === 'development';
 
 // Path to untrunc binary
 const getUntruncPath = () => {
