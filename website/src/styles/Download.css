@@ -1,0 +1,114 @@
+.download__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.download__card {
+    text-align: center;
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+}
+
+.download__card--primary {
+    border-color: rgba(0, 212, 255, 0.2);
+    background: rgba(0, 212, 255, 0.04);
+}
+
+.download__card--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+}
+
+.download__card-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    background: var(--accent-gradient);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.download__card-badge--soon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.download__card-btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    justify-content: center;
+}
+
+.download__card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.download__card-os {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.download__card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.download__card-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.download__card-detail-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.download__card-detail-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.download__card-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.download__note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+@media (max-width: 640px) {
+    .download__grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,132 @@
+.footer {
+    padding: 80px 0 0;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.footer__logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: var(--accent-gradient);
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.footer__logo-text {
+    color: var(--text-primary);
+}
+
+.footer__desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+.footer__links-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__links a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer__links a:hover {
+    color: var(--accent-start);
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer__copyright {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+}
+
+.footer__social-link:hover {
+    color: var(--accent-start);
+    border-color: rgba(0, 212, 255, 0.2);
+    background: rgba(0, 212, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+    .footer__top {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer__brand {
+        grid-column: span 2;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__brand {
+        grid-column: span 1;
+    }
+}

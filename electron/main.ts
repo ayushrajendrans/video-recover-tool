@@ -19,14 +19,28 @@ function createWindow() {
     title: 'Pro Video Repair',
     width: 1100,
     height: 750,
+    frame: false, // Frameless window
+    icon: path.join(process.env.VITE_PUBLIC, 'icon.png'),
+    backgroundColor: '#09090b', // Match obsidian background
     show: false,
-    autoHideMenuBar: true, // Hide menu bar by default
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, '../preload/preload.cjs'),
       nodeIntegration: false,
       contextIsolation: true,
     },
   })
+
+  // IPC handlers for window control (since system ones are gone)
+  ipcMain.on('window-minimize', () => win?.minimize())
+  ipcMain.on('window-maximize', () => {
+    if (win?.isMaximized()) {
+      win.unmaximize()
+    } else {
+      win?.maximize()
+    }
+  })
+  ipcMain.on('window-close', () => win?.close())
 
   win.setMenu(null); // Completely remove the system menu
 
